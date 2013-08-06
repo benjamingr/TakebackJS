@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TEST</title>
+	</head>
+	<body>
+		<table id='content1'>
+			Extraction from a table: 
+			<thead>
+			<tr>
+				<th>Name</th><th>Title</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr><td>John</td><td>Doctor</td></tr>
+				<tr><td>Fi Fi</td><td>Dog</td></tr>
+				<tr><td>Major</td><td>Major</td></tr>
+			</tbody>
+		</table>
+		<textarea id='result1' rows=20 cols=50></textarea>
+		<script src='./DomScraper.js'></script>
+		<script type='text/javascript'>
+			var s = new Scraper({});
+			window.res = s.scrape('#content1');
+			document.getElementById("result1").value = JSON.stringify(res,null,2);
+		</script>
+</html>
