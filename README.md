@@ -1,11 +1,12 @@
-DomScraper
+TakebackJS
 ==========
 
-Dom Scraper - Take control of your DOM.
+Take control of your DOM.
 
-Often we have to serve HTML for speed but still want data bindable JS objects for good separation of concerns.
+Serving HTML from the server can be useful for load times. We still want sensible structure for our data, we want 
+models that back up our presentation.
 
-This converts DOM to data bindable objects. 
+This converts DOM structure to data bindable objects. 
 
 For example, the following table:
 
@@ -37,8 +38,19 @@ Gets converted to an array of bindable objects
     res[0].name("Snow");//Jon is now Snow in the dom
     res[0].name();//Jon
     res[1].title();//Dog
+    res.push({name:"Who",title:"Doctor"});//adds to the DOM too
+    res.splice(0,1);//removes the first element, both from array and DOM
     
 And so on.
 
 
 ###Warning, this is WiP and is _highly_ unstable
+
+
+##TODO:
+
+ - Take back lists and not just tables.
+ - Fix memory leak when deleting elements (in cache)
+ - Plugins for Knockout and Angular
+ - Find more collaborators
+ - Improve readability 
